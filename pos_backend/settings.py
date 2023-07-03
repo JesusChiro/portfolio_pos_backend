@@ -152,8 +152,7 @@ CORS_ALLOW_ALL_ORIGINS = True
 cloudinary.config(
     cloud_name=config('CLOUDINARY_CLOUD_NAME'),
     api_key=config('CLOUDINARY_API_KEY'),
-    api_secret=config('CLOUDINARY_API_SECRET'),
-    secure=True,
+    api_secret=config('CLOUDINARY_API_SECRET')
 )
 
 SIMPLE_JWT = {
@@ -162,4 +161,4 @@ SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=1),
     # ...
 }
-STATICFILES_STORAGE = 'white.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
