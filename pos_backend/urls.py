@@ -20,6 +20,8 @@ from django.urls import re_path
 from django.contrib import admin
 from django.urls import path, include
 
+from django.http import JsonResponse
+
 from rest_framework_simplejwt.views import (
     TokenObtainPairView, TokenVerifyView
 )
@@ -43,7 +45,11 @@ schema_view = get_schema_view(
 
 
 def index(request):
-    return '<h1><center> API POS BACKEND VERSION 1.0.0</center></h1>'
+    context = {
+        'status': True,
+        'content': 'API POS BACKEND VERSION 1.0.0'
+    }
+    return JsonResponse(context)
 
 
 urlpatterns = [
